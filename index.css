@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #07080b;
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.58);
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.10);
+  --accent: #7c3aed; /* violet */
+
+  color-scheme: dark;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-accent='blue'] {
+  --accent: #3b82f6;
+}
+
+:root[data-accent='violet'] {
+  --accent: #7c3aed;
+}
+
+:root[data-theme='light'] {
+  --bg: #f6f7fb;
+  --text: rgba(8, 10, 16, 0.92);
+  --muted: rgba(8, 10, 16, 0.58);
+  --card: rgba(255, 255, 255, 0.75);
+  --border: rgba(8, 10, 16, 0.10);
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+  background: radial-gradient(1200px 700px at 80% -10%, rgba(124, 58, 237, 0.22), transparent 55%),
+    radial-gradient(900px 500px at 20% 5%, rgba(59, 130, 246, 0.12), transparent 60%),
+    var(--bg);
+}
+
+:root[data-theme='light'] body {
+  background: radial-gradient(1200px 700px at 80% -10%, rgba(124, 58, 237, 0.14), transparent 55%),
+    radial-gradient(900px 500px at 20% 5%, rgba(59, 130, 246, 0.10), transparent 60%),
+    var(--bg);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
